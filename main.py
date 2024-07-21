@@ -4,16 +4,12 @@ import random
 import os
 import bcrypt
 from peewee import *
-from dotenv import load_dotenv
-
-# 加载环境变量
-load_dotenv()
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
 
-# 从环境变量中设置Resend API Key
-resend.api_key = os.getenv('RESEND_API_KEY')
+# 设置Resend API Key
+resend.api_key = "re_W1EAjew5_nwhi8KcApcqY5fK5iJuo1euX"
 
 # 设置数据库
 db = SqliteDatabase('users.db')
@@ -164,4 +160,3 @@ def download(filename):
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080, debug=True)
-
