@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Dashboard</h1>
+        <p>Storage Used: {{ storage_used }} MB</p>
+        <form method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="file">Upload File:</label>
+                <input type="file" id="file" name="file" required>
+            </div>
+            <button type="submit" class="btn">Upload</button>
+        </form>
+        <h2>Your Files</h2>
+        <ul>
+            {% for file in files %}
+            <li><a href="{{ url_for('download', filename=file) }}">{{ file }}</a></li>
+            {% endfor %}
+        </ul>
+        <a href="/logout" class="btn">Logout</a>
+    </div>
+</body>
+</html>
