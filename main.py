@@ -9,7 +9,7 @@ app = Flask(__name__)
 app.secret_key = 'your_secret_key'
 
 # 设置Resend API Key
-resend.api_key = "re_W1EAjew5_nwhi8KcApcqY5fK5iJuo1euX"
+resend.api_key = ""
 
 # 设置数据库
 db = SqliteDatabase('users.db')
